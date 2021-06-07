@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mgmt_sys/style.css' %}">
+</head>
+
+<body>
+	{% include 'mgmt_sys/nav_area.html' %}   
+
+    <div id="test_cases_content">
+    {% if latest_test_cases_list %}
+        <ul>
+        {% for test_case in latest_test_cases_list %}
+        <li>{{ test_case }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No test case are available.</p>
+    {% endif %}
+    </div> 
+
+</body>
+
+</html>

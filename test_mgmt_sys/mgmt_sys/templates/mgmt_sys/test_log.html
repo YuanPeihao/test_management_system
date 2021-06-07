@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'mgmt_sys/style.css' %}">
+</head>
+
+<body>
+	{% include 'mgmt_sys/nav_area.html' %}   
+
+    <div id="test_logs_content">
+    {% if latest_test_logs_list %}
+        <ul>
+        {% for test_log in latest_test_logs_list %}
+        <li><a href="{% url 'mgmt_sys:test_mgmt_case_log_content' test_log.case_log_file_name %}">{{ test_log }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No test log is available.</p>
+    {% endif %}
+    </div> 
+
+</body>
+
+</html>

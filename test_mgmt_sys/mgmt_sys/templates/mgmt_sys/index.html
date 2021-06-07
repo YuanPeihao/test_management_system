@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'mgmt_sys/style.css' %}">
+</head>
+
+<body>
+	{% include 'mgmt_sys/nav_area.html' %}    
+
+	<div>
+		<img src="{% static 'mgmt_sys/images/tms_intro.png' %}" alt="TMS Intro">
+	</div>
+
+</body>
+
+{% include 'mgmt_sys/footer.html' %} 
+
+</html>
